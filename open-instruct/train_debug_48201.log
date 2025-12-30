@@ -1,0 +1,352 @@
+Job started on cn43-l40.prajna.iitb.ac.in at Tue Dec 30 23:25:53 IST 2025
+CUDA_VISIBLE_DEVICES=0,1,2,3
+SLURM_CPUS_PER_TASK=16
+SLURM_NTASKS=4
+INFO: deactivate-binutils_linux-64.sh made the following environmental changes:
+-ADDR2LINE=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-addr2line
+-AR=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-ar
+-AS=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-as
+-CXXFILT=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-c++filt
+-ELFEDIT=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-elfedit
+-GPROF=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-gprof
+-HOST=x86_64-conda_cos6-linux-gnu
++HOST=x86_64-conda-linux-gnu
+-LD_GOLD=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-ld.gold
+-LD=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-ld
+-NM=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-nm
+-OBJCOPY=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-objcopy
+-OBJDUMP=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-objdump
+-RANLIB=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-ranlib
+-READELF=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-readelf
+-SIZE=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-size
+-STRINGS=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-strings
+-STRIP=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-strip
+INFO: activate-binutils_linux-64.sh made the following environmental changes:
++ADDR2LINE=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-addr2line
++AR=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-ar
++AS=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-as
++CXXFILT=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-c++filt
++ELFEDIT=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-elfedit
++GPROF=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-gprof
++HOST=x86_64-conda_cos6-linux-gnu
+-HOST=x86_64-conda-linux-gnu
++LD_GOLD=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-ld.gold
++LD=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-ld
++NM=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-nm
++OBJCOPY=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-objcopy
++OBJDUMP=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-objdump
++RANLIB=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-ranlib
++READELF=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-readelf
++SIZE=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-size
++STRINGS=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-strings
++STRIP=/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/x86_64-conda_cos6-linux-gnu-strip
+Tue Dec 30 23:25:57 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.86.15              Driver Version: 570.86.15      CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    Off |   00000000:2C:00.0 Off |                    0 |
+| N/A   37C    P0             87W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA L40S                    Off |   00000000:2D:00.0 Off |                    0 |
+| N/A   35C    P0             82W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA L40S                    Off |   00000000:3F:00.0 Off |                    0 |
+| N/A   34C    P0             83W /  350W |       1MiB /  46068MiB |      1%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA L40S                    Off |   00000000:40:00.0 Off |                    0 |
+| N/A   36C    P0             80W /  350W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              64
+On-line CPU(s) list: 0-63
+Thread(s) per core:  2
+Core(s) per socket:  16
+Socket(s):           2
+NUMA node(s):        2
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               143
+Model name:          Intel(R) Xeon(R) Gold 6444Y
+Stepping:            8
+CPU MHz:             4000.000
+CPU max MHz:         4000.0000
+CPU min MHz:         800.0000
+BogoMIPS:            7200.00
+Virtualization:      VT-x
+L1d cache:           48K
+CUDA_HOME set to: /home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env
+/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/nvcc
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Nov__7_07:23:37_PM_PST_2025
+Cuda compilation tools, release 13.1, V13.1.80
+Build cuda_13.1.r13.1/compiler.36836380_0
+/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+The following values were not passed to `accelerate launch` and had defaults used instead:
+		More than one GPU was found, enabling multi-GPU training.
+		If this was unintended please pass in `--num_processes=1`.
+	`--num_machines` was set to a value of `1`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[W1230 23:26:23.364446908 CUDAAllocatorConfig.h:28] Warning: expandable_segments not supported on this platform (function operator())
+[W1230 23:26:23.364448056 CUDAAllocatorConfig.h:28] Warning: expandable_segments not supported on this platform (function operator())
+[W1230 23:26:26.107286424 CUDAAllocatorConfig.h:28] Warning: expandable_segments not supported on this platform (function operator())
+[W1230 23:26:31.148305046 CUDAAllocatorConfig.h:28] Warning: expandable_segments not supported on this platform (function operator())
+Tokenizer name or path: meta-llama/Llama-3.2-3B-Instruct
+Tokenizer name or path: meta-llama/Llama-3.2-3B-Instruct
+2025-12-30 23:26:32 - WARNING - other.py:513 - Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Tokenizer name or path: meta-llama/Llama-3.2-3B-Instruct
+Tokenizer name or path: meta-llama/Llama-3.2-3B-Instruct
+Tokenizer name or path: meta-llama/Llama-3.2-3B-Instruct
+Tokenizer name or path: meta-llama/Llama-3.2-3B-Instruct
+Tokenizer name or path: meta-llama/Llama-3.2-3B-Instruct
+Tokenizer name or path: meta-llama/Llama-3.2-3B-Instruct
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 96d4e2be-ebad-4872-90b3-6e3c9c6bfca7)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:26:37 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 96d4e2be-ebad-4872-90b3-6e3c9c6bfca7)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+2025-12-30 23:26:37 - WARNING - _http.py:328 - Retrying in 1s [Retry 1/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 19407110-0719-4806-a5ee-1b4b59879cbb)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:26:37 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 19407110-0719-4806-a5ee-1b4b59879cbb)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+2025-12-30 23:26:37 - WARNING - _http.py:328 - Retrying in 1s [Retry 1/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 5b173613-7c70-467e-9a92-9439407b1055)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:26:42 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 5b173613-7c70-467e-9a92-9439407b1055)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+2025-12-30 23:26:42 - WARNING - _http.py:328 - Retrying in 1s [Retry 1/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 46455794-b604-4458-8276-2735cfac0c81)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:26:47 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 46455794-b604-4458-8276-2735cfac0c81)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+2025-12-30 23:26:47 - WARNING - _http.py:328 - Retrying in 1s [Retry 1/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: a65cbcd4-269b-4b97-926e-a8d0d0e20359)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:26:48 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: a65cbcd4-269b-4b97-926e-a8d0d0e20359)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+2025-12-30 23:26:48 - WARNING - _http.py:328 - Retrying in 2s [Retry 2/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: d56227e4-a708-465e-a1fc-22364e386e27)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:26:48 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: d56227e4-a708-465e-a1fc-22364e386e27)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+2025-12-30 23:26:48 - WARNING - _http.py:328 - Retrying in 2s [Retry 2/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 889e1ec3-7ab8-4e61-b8ef-17ad37db8c7e)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:26:53 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 889e1ec3-7ab8-4e61-b8ef-17ad37db8c7e)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+2025-12-30 23:26:53 - WARNING - _http.py:328 - Retrying in 2s [Retry 2/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 886c3a63-fc2c-4cc1-9782-c62f4a78b3bb)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:26:58 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 886c3a63-fc2c-4cc1-9782-c62f4a78b3bb)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+2025-12-30 23:26:58 - WARNING - _http.py:328 - Retrying in 2s [Retry 2/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 76e3cabf-e808-4882-a004-c67719113c00)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:00 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 76e3cabf-e808-4882-a004-c67719113c00)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+2025-12-30 23:27:00 - WARNING - _http.py:328 - Retrying in 4s [Retry 3/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 250b4f85-529a-4902-bf58-9cc436ee08a2)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:05 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 250b4f85-529a-4902-bf58-9cc436ee08a2)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+2025-12-30 23:27:05 - WARNING - _http.py:328 - Retrying in 4s [Retry 3/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 8435b6d2-8c9f-4683-838f-7b1ff44bb35b)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:10 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 8435b6d2-8c9f-4683-838f-7b1ff44bb35b)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+2025-12-30 23:27:10 - WARNING - _http.py:328 - Retrying in 4s [Retry 3/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 0f6a8f49-7cff-40eb-8199-7ad8a0c943a0)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:14 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 0f6a8f49-7cff-40eb-8199-7ad8a0c943a0)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 90f5ce04-9a22-4f9b-821e-87fc6a6fa76f)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+2025-12-30 23:27:14 - WARNING - _http.py:328 - Retrying in 8s [Retry 4/5].
+2025-12-30 23:27:14 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 90f5ce04-9a22-4f9b-821e-87fc6a6fa76f)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+2025-12-30 23:27:14 - WARNING - _http.py:328 - Retrying in 8s [Retry 4/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 9cb53f54-64c2-434e-b0c1-7980e5a2824c)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:15 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 9cb53f54-64c2-434e-b0c1-7980e5a2824c)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+2025-12-30 23:27:15 - WARNING - _http.py:328 - Retrying in 4s [Retry 3/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: ed70b0d5-e164-4dbe-9614-5343a149ab00)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:19 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: ed70b0d5-e164-4dbe-9614-5343a149ab00)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+2025-12-30 23:27:19 - WARNING - _http.py:328 - Retrying in 8s [Retry 4/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 174f507e-039c-4891-8bb7-93306a743d67)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:29 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 174f507e-039c-4891-8bb7-93306a743d67)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+2025-12-30 23:27:29 - WARNING - _http.py:328 - Retrying in 8s [Retry 4/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 11aec022-baef-4484-bf4a-4aa382a64f1e)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:32 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 11aec022-baef-4484-bf4a-4aa382a64f1e)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+2025-12-30 23:27:32 - WARNING - _http.py:328 - Retrying in 8s [Retry 5/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 7465cf7c-cfc5-436b-b9db-0b4dea178758)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:32 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 7465cf7c-cfc5-436b-b9db-0b4dea178758)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+2025-12-30 23:27:32 - WARNING - _http.py:328 - Retrying in 8s [Retry 5/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: fec61df4-7d71-4d31-998f-f02b2150b629)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:32 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: fec61df4-7d71-4d31-998f-f02b2150b629)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+2025-12-30 23:27:32 - WARNING - _http.py:328 - Retrying in 8s [Retry 5/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 75061185-7eab-4562-b7fb-ddf20f6c31ee)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:42 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 75061185-7eab-4562-b7fb-ddf20f6c31ee)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+2025-12-30 23:27:42 - WARNING - _http.py:328 - Retrying in 8s [Retry 5/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: fe2f679a-45e8-47a3-9e20-f64c66d529c2)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+2025-12-30 23:27:45 - WARNING - _http.py:319 - '(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: fe2f679a-45e8-47a3-9e20-f64c66d529c2)')' thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/connection.py", line 204, in _new_conn
+[rank1]:     sock = connection.create_connection(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/util/connection.py", line 60, in create_connection
+[rank1]:     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/socket.py", line 967, in getaddrinfo
+[rank1]:     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+[rank1]: socket.gaierror: [Errno -2] Name or service not known
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+[rank1]:     response = self._make_request(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+[rank1]:     raise new_e
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+[rank1]:     self._validate_conn(conn)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+[rank1]:     conn.connect()
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/connection.py", line 759, in connect
+[rank1]:     self.sock = sock = self._new_conn()
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/connection.py", line 211, in _new_conn
+[rank1]:     raise NameResolutionError(self.host, self, e) from e
+[rank1]: urllib3.exceptions.NameResolutionError: HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno -2] Name or service not known)
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/requests/adapters.py", line 644, in send
+[rank1]:     resp = conn.urlopen(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+[rank1]:     retries = retries.increment(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/urllib3/util/retry.py", line 519, in increment
+[rank1]:     raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+[rank1]: urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host='huggingface.co', port=443): Failed to resolve 'huggingface.co' ([Errno -2] Name or service not known)"))
+
+[rank1]: During handling of the above exception, another exception occurred:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1543, in _get_metadata_or_catch_error
+[rank1]:     metadata = get_hf_file_metadata(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1460, in get_hf_file_metadata
+[rank1]:     r = _request_wrapper(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+[rank1]:     response = _request_wrapper(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 306, in _request_wrapper
+[rank1]:     response = http_backoff(method=method, url=url, **params)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 325, in http_backoff
+[rank1]:     raise err
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 306, in http_backoff
+[rank1]:     response = session.request(method=method, url=url, **kwargs)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+[rank1]:     resp = self.send(prep, **send_kwargs)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+[rank1]:     r = adapter.send(request, **kwargs)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 95, in send
+[rank1]:     return super().send(request, *args, **kwargs)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/requests/adapters.py", line 677, in send
+[rank1]:     raise ConnectionError(e, request=request)
+[rank1]: requests.exceptions.ConnectionError: (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: fe2f679a-45e8-47a3-9e20-f64c66d529c2)')
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/utils/hub.py", line 479, in cached_files
+[rank1]:     hf_hub_download(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+[rank1]:     return _hf_hub_download_to_cache_dir(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1114, in _hf_hub_download_to_cache_dir
+[rank1]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1658, in _raise_on_head_call_error
+[rank1]:     raise LocalEntryNotFoundError(
+[rank1]: huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/open_instruct/finetune_with_val.py", line 1080, in <module>
+[rank1]:     main(args, tc)
+[rank1]:   File "/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/open_instruct/finetune_with_val.py", line 503, in main
+[rank1]:     tokenizer = tc.tokenizer
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/functools.py", line 981, in __get__
+[rank1]:     val = self.func(instance)
+[rank1]:   File "/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/open_instruct/dataset_transformation.py", line 809, in tokenizer
+[rank1]:     return GET_TOKENIZER_FN[self.get_tokenizer_fn](self)
+[rank1]:   File "/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/open_instruct/dataset_transformation.py", line 682, in get_tokenizer_tulu_v2_2
+[rank1]:     config = AutoConfig.from_pretrained(tc.tokenizer_name_or_path, revision=tc.tokenizer_revision)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/models/auto/configuration_auto.py", line 1332, in from_pretrained
+[rank1]:     config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/configuration_utils.py", line 662, in get_config_dict
+[rank1]:     config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/configuration_utils.py", line 721, in _get_config_dict
+[rank1]:     resolved_config_file = cached_file(
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/utils/hub.py", line 322, in cached_file
+[rank1]:     file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+[rank1]:   File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/transformers/utils/hub.py", line 553, in cached_files
+[rank1]:     raise OSError(
+[rank1]: OSError: We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.
+[rank1]: Check your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+W1230 23:27:46.992000 27920 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 28030 closing signal SIGTERM
+W1230 23:27:46.993000 27920 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 28032 closing signal SIGTERM
+W1230 23:27:46.993000 27920 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 28033 closing signal SIGTERM
+E1230 23:27:47.233000 27920 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 1 (pid: 28031) of binary: /home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/python
+Traceback (most recent call last):
+  File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/bin/accelerate", line 7, in <module>
+    sys.exit(main())
+  File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1266, in launch_command
+    deepspeed_launcher(args)
+  File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/accelerate/commands/launch.py", line 952, in deepspeed_launcher
+    distrib_run.run(args)
+  File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/compiling-ganesh/24m0829/miniconda3/envs/ml-training-env/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/open_instruct/finetune_with_val.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-30_23:27:46
+  host      : cn43-l40.prajna.iitb.ac.in
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 28031)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+Job finished at Tue Dec 30 23:27:47 IST 2025

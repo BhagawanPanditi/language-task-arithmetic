@@ -10,8 +10,8 @@ accelerate launch \
     --deepspeed_config_file /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/configs/ds_configs/stage3_no_offloading_accelerate.conf \
     --deepspeed_multinode_launcher standard \
     /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/open_instruct/finetune_with_val.py \
-    --model_name_or_path meta-llama/Llama-3.2-3B \
-    --tokenizer_name_or_path meta-llama/Llama-3.2-3B-Instruct \
+    ---model_name_or_path /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/models/llama-3.2-3b-base \
+    --tokenizer_name_or_path /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/models/llama-3.2-3b-instruct \
     --use_slow_tokenizer \
     --use_flash_attn \
     --max_seq_length 4096 \
