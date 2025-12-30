@@ -129,7 +129,7 @@ class FlatArguments:
         metadata={"help": "A dictionary of datasets (local or HF) to sample from."},
     )
     # dataset_mixer_list: List[str] = field(default_factory=lambda: ["/workspace/ibm-vaibhav/formatted_datasets/tulu-math-persona/final_train.jsonl", "1.0", "/workspace/ibm-vaibhav/formatted_datasets/xlsum/final_train.jsonl", "1.0", "/workspace/ibm-vaibhav/formatted_datasets/xnli/final_train.jsonl", "1.0"])
-    dataset_mixer_list: List[str] = field(default_factory=lambda: ["/workspace/ibm-vaibhav/xnli_messages_en_train.jsonl", "1.0"])
+    dataset_mixer_list: List[str] = field(default_factory=lambda: ["/home/compiling-ganesh/24m0829/language-task-arithmetic/formatted_datasets/xnli/final_train.jsonl", "1.0"])
     """A list of datasets (local or HF) to sample from."""
     dataset_mixer_list_splits: List[str] = field(default_factory=lambda: ["train"])
     """The dataset splits to use for training"""
@@ -178,7 +178,7 @@ class FlatArguments:
     #     },
     # )
     val_dataset_mixer_list: Optional[List[str]] = field(
-        default_factory=lambda: ["/workspace/ibm-vaibhav/xnli_messages_en_validation.jsonl", "1.0"],
+        default_factory=lambda: ["/home/compiling-ganesh/24m0829/language-task-arithmetic/formatted_datasets/xnli/final_validation.jsonl", "1.0"],
         metadata={
             "help": (
                 "A list of validation dataset identifiers (HF id or local path). "
@@ -697,15 +697,18 @@ def main(args: FlatArguments, tc: TokenizerConfig):
     else:
         logger.info("Training new model from scratch")
         model = AutoModelForCausalLM.from_config(config)
-    layerwise_masks_up = torch.load("/workspace/ibm-vaibhav/language_mask.pt")
-    layerwise_masks_gate = torch.load("/workspace/ibm-vaibhav/language_mask.pt")
+    layerwise_masks_up = torch.load("/home/compiling-ganesh/24m0829/language-task-arithmetic/activations/up_masks.pt")
+    layerwise_masks_down = torch.load("/home/compiling-ganesh/24m0829/language-task-arithmetic/activations/down_masks.pt")
 
     for layer_idx, layer in enumerate(model.model.layers):
         layer.mlp.up_proj.weight.register_hook(
             lambda g, m=layerwise_masks_up[layer_idx]: g * m.to(g.device, dtype=g.dtype)
         )
         layer.mlp.gate_proj.weight.register_hook(
-            lambda g, m=layerwise_masks_gate[layer_idx]: g * m.to(g.device, dtype=g.dtype)
+            lambda g, m=layerwise_masks_up[layer_idx]: g * m.to(g.device, dtype=g.dtype)
+        )
+        layer.mlp.down_proj.weight.register_hook(
+            lambda g, m=layerwise_masks_down[layer_idx]: g * m.to(g.device, dtype=g.dtype)
         )
 
     # We resize the embeddings only when necessary to avoid index errors. If you are creating a model from scratch
