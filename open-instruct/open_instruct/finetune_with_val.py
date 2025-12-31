@@ -509,14 +509,7 @@ def main(args: FlatArguments, tc: TokenizerConfig):
     # ------------------------------------------------------------
     # Initialize trackers (TensorBoard only, no wandb)
     if args.with_tracking:
-        experiment_config = vars(args)
-        experiment_config["lr_scheduler_type"] = experiment_config["lr_scheduler_type"]
-        experiment_config.update(vars(tc))
-
-        accelerator.init_trackers(
-            project_name=args.exp_name,
-            config=experiment_config,
-        )
+        accelerator.init_trackers(project_name=args.exp_name)
 
 
     if accelerator.is_main_process:
