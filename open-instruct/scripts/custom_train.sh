@@ -1,6 +1,4 @@
 export CUDA_VISIBLE_DEVICES=0,1,2,3
-export HF_DATASETS_CACHE=/home/compiling-ganesh/24m0829/language-task-arithmetic/hf_datasets_cache
-export TRANSFORMERS_CACHE=/home/compiling-ganesh/24m0829/language-task-arithmetic/hf_transformers_cache
 export TMPDIR=/home/compiling-ganesh/24m0829/language-task-arithmetic/tmp
 
 accelerate launch \
