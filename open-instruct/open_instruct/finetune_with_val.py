@@ -65,14 +65,10 @@ from open_instruct.dataset_transformation import (
 from open_instruct.model_utils import push_folder_to_hub, save_with_accelerate
 from open_instruct.utils import (
     ArgumentParserPlus,
-    clean_last_n_checkpoints,
     get_last_checkpoint_path,
-    get_wandb_tags,
     is_beaker_job,
-    launch_ai2_evals_on_weka,
     maybe_get_beaker_config,
     maybe_use_ai2_hf_entity,
-    maybe_use_ai2_wandb_entity,
 )
 
 logger = get_logger(__name__)
@@ -509,48 +505,19 @@ def main(args: FlatArguments, tc: TokenizerConfig):
         args.output_dir = os.path.join(args.output_dir, args.run_name)
     logger.info("using the output directory: %s", args.output_dir)
     args.dataset_local_cache_dir = os.path.abspath(args.dataset_local_cache_dir)
-    if is_beaker_job():
-        args.dataset_local_cache_dir = "/weka/oe-adapt-default/allennlp/deletable_open_instruct_dataset_cache"
-    if args.push_to_hub and accelerator.is_main_process:
-        if args.hf_repo_id is None:  # auto-generate one
-            args.hf_repo_id = "open_instruct_dev"
-        if args.hf_entity is None:  # first try to use AI2 entity
-            args.hf_entity = maybe_use_ai2_hf_entity()
-        if args.hf_entity is None:  # then try to use the user's entity
-            args.hf_entity = HfApi().whoami()["name"]
-        args.hf_repo_id = f"{args.hf_entity}/{args.hf_repo_id}"
-        if args.hf_repo_revision is None:
-            args.hf_repo_revision = args.run_name
-        args.hf_repo_url = f"https://huggingface.co/{args.hf_repo_id}/tree/{args.hf_repo_revision}"
-        if is_beaker_job():
-            beaker_config = maybe_get_beaker_config()
 
     # ------------------------------------------------------------
-    # Initialize the trackers we use, and also store our configuration.
-    # The trackers initializes automatically on the main process.
+    # Initialize trackers (TensorBoard only, no wandb)
     if args.with_tracking:
         experiment_config = vars(args)
-        # TensorBoard cannot log Enums, need the raw value
         experiment_config["lr_scheduler_type"] = experiment_config["lr_scheduler_type"]
-
-        # (Optional) Ai2 internal tracking
-        if args.wandb_entity is None:
-            args.wandb_entity = maybe_use_ai2_wandb_entity()
-        if accelerator.is_main_process and is_beaker_job():
-            experiment_config.update(vars(beaker_config))
         experiment_config.update(vars(tc))
+
         accelerator.init_trackers(
-            args.wandb_project_name,
-            experiment_config,
-            init_kwargs={
-                "wandb": {
-                    "name": args.run_name,
-                    "entity": args.wandb_entity,
-                    "tags": [args.exp_name] + get_wandb_tags(),
-                }
-            },
+            project_name=args.exp_name,
+            config=experiment_config,
         )
-        wandb_tracker = accelerator.get_tracker("wandb")
+
 
     if accelerator.is_main_process:
         pprint([args, tc])
@@ -1053,22 +1020,6 @@ def main(args: FlatArguments, tc: TokenizerConfig):
     ):
         shutil.copytree(args.output_dir, "/output", dirs_exist_ok=True)
 
-    if is_beaker_job() and accelerator.is_main_process and args.try_launch_beaker_eval_jobs:
-        launch_ai2_evals_on_weka(
-            path=args.output_dir,
-            leaderboard_name=args.hf_repo_revision,
-            oe_eval_max_length=args.oe_eval_max_length,
-            wandb_url=wandb_tracker.run.get_url(),
-            oe_eval_tasks=args.oe_eval_tasks,
-            gs_bucket_path=args.gs_bucket_path,
-        )
-    if args.push_to_hub:
-        push_folder_to_hub(
-            accelerator,
-            args.output_dir,
-            args.hf_repo_id,
-            args.hf_repo_revision,
-        )
     accelerator.wait_for_everyone()
     if args.with_tracking:
         accelerator.end_training()
