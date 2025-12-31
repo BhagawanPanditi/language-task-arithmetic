@@ -1,0 +1,45 @@
+{
+  "tokenizer_config": {
+    "tokenizer_name_or_path": "/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/models/llama-3.2-3b-instruct",
+    "tokenizer_revision": "main",
+    "trust_remote_code": false,
+    "use_fast": true,
+    "chat_template_name": null,
+    "add_bos": false,
+    "get_tokenizer_fn": "get_tokenizer_tulu_v2_2",
+    "tokenizer_files_hash": "941290c40ad93f86d5b8d07bbc08dd59881da5ba683e533885b523c9ba184b94,6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b,6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec,vocab.json not found",
+    "use_slow_tokenizer": true,
+    "tokenizer_name": null,
+    "ground_truths_key": "ground_truth",
+    "sft_messages_key": "messages"
+  },
+  "dataset_configs": [
+    {
+      "dataset_name": "/home/compiling-ganesh/24m0829/language-task-arithmetic/formatted_datasets/xnli/final_train.jsonl",
+      "dataset_split": "train",
+      "dataset_revision": "main",
+      "dataset_range": 47490,
+      "transform_fn": [
+        "sft_tulu_tokenize_and_truncate_v1",
+        "sft_tulu_filter_v1"
+      ],
+      "transform_fn_args": [
+        {
+          "max_seq_length": 4096
+        },
+        {}
+      ],
+      "target_columns": [
+        "input_ids",
+        "attention_mask",
+        "labels"
+      ],
+      "dataset_config_seed": 42,
+      "dataset_commit_hash": null,
+      "frac_or_num_samples": 1.0,
+      "original_dataset_size": 47490,
+      "is_upsampled": false
+    }
+  ],
+  "config_hash": "ac1d9ae160"
+}

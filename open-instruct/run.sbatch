@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH -J llama-debug
-#SBATCH -p l40
-#SBATCH --qos=l40
+#SBATCH -p a40
+#SBATCH --qos=a40
 #SBATCH --nodes=1
-#SBATCH --gres=gpu:4
-#SBATCH --ntasks-per-node=4
+#SBATCH --gres=gpu:2
+#SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=0
-#SBATCH --time=0:30:00
+#SBATCH --time=8:00:00
 #SBATCH --output=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/train_debug_%j.log
 #SBATCH --error=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/train_debug_%j.log
 export PYTHONPATH=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct:$PYTHONPATH

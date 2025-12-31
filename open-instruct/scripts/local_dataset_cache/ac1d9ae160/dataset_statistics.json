@@ -1,0 +1,21 @@
+{
+  "per_dataset_stats": [
+    {
+      "dataset_name": "/home/compiling-ganesh/24m0829/language-task-arithmetic/formatted_datasets/xnli/final_train.jsonl",
+      "dataset_split": "train",
+      "initial_instances": 47490,
+      "final_instances": 47490,
+      "instances_filtered": 0,
+      "frac_or_num_samples": 1.0,
+      "original_dataset_size": 47490,
+      "is_upsampled": false,
+      "upsampling_factor": 1.0,
+      "total_tokens": 3967292,
+      "trainable_tokens": 94980,
+      "avg_tokens_per_instance": 83.53952411033902
+    }
+  ],
+  "dataset_order": [
+    "/home/compiling-ganesh/24m0829/language-task-arithmetic/formatted_datasets/xnli/final_train.jsonl"
+  ]
+}
