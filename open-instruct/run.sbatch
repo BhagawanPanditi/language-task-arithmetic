@@ -11,23 +11,20 @@
 #SBATCH --output=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/train_debug_%j.log
 #SBATCH --error=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/train_debug_%j.log
 export PYTHONPATH=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct:$PYTHONPATH
-curl --location-trusted -u 24m0829:85964d13d0afcf84aca3495020f2ef6a "https://internet-sso.iitb.ac.in/login.php" > /dev/null
+
 echo "Job started on $(hostname) at $(date)"
 echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 echo "SLURM_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK"
 echo "SLURM_NTASKS=$SLURM_NTASKS"
-
+export WANDB_DISABLED=true
+export WANDB_MODE=offline
+export WANDB_API_KEY=""
 # -----------------------------
 # Conda
 # -----------------------------
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate ml-training-env
 
-
-# -----------------------------
-# CUDA Setup - Use conda environment as CUDA_HOME
-# Now that cuda-toolkit is installed, this will work properly
-# -----------------------------
 export CUDA_HOME=$CONDA_PREFIX
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:-}:$CUDA_HOME/lib64:$CUDA_HOME/lib
@@ -50,7 +47,6 @@ export HF_DATASETS_CACHE=$HF_HOME/datasets
 export TOKENIZERS_PARALLELISM=false
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
-# Optional: improve CPU data loading
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
