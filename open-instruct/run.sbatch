@@ -11,7 +11,7 @@
 #SBATCH --output=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/train_debug_%j.log
 #SBATCH --error=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/train_debug_%j.log
 export PYTHONPATH=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct:$PYTHONPATH
-
+curl --location-trusted -u 24m0829:85964d13d0afcf84aca3495020f2ef6a "https://internet-sso.iitb.ac.in/login.php" > /dev/null
 echo "Job started on $(hostname) at $(date)"
 echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 echo "SLURM_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK"
