@@ -388,7 +388,7 @@ class FlatArguments:
     """The revision of the saved model in the Hugging Face Hub (can be autoset if not given)"""
     hf_repo_url: Optional[str] = None
     """The url of the saved model in the Hugging Face Hub (will be autoset)"""
-    try_launch_beaker_eval_jobs: bool = True
+    try_launch_beaker_eval_jobs: bool = False
     """Whether to launch beaker evaluation jobs after training"""
     hf_metadata_dataset: Optional[str] = "allenai/tulu-3-evals"
     """What dataset to upload the metadata to. If unset, don't upload metadata"""
@@ -396,7 +396,7 @@ class FlatArguments:
     """Immediately exit after caching the dataset"""
 
     # Ai2 specific settings
-    try_auto_save_to_beaker: bool = True
+    try_auto_save_to_beaker: bool = False
     """Whether to try to save the model to Beaker dataset `/output` after training"""
     gs_bucket_path: Optional[str] = None
     """The path to the gs bucket to save the model to"""
