@@ -378,7 +378,7 @@ class FlatArguments:
     """The wandb's project name"""
     wandb_entity: Optional[str] = None
     """The entity (team) of wandb's project"""
-    push_to_hub: bool = True
+    push_to_hub: bool = False
     """Whether to upload the saved model to huggingface"""
     hf_entity: Optional[str] = None
     """The user or org name of the model repository from the Hugging Face Hub"""
