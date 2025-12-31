@@ -99,7 +99,7 @@ class FlatArguments:
         metadata={"help": "Pretrained config name or path if not the same as model_name"},
     )
     use_flash_attn: bool = field(
-        default=True,
+        default=False,
         metadata={"help": "Whether to use flash attention in the model training"},
     )
     model_revision: Optional[str] = field(

@@ -11,7 +11,6 @@ accelerate launch \
     --model_name_or_path /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/models/llama-3.2-3b-base \
     --tokenizer_name_or_path /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/models/llama-3.2-3b-instruct \
     --use_slow_tokenizer \
-    --use_flash_attn \
     --max_seq_length 4096 \
     --per_device_train_batch_size 8 \
     --gradient_accumulation_steps 4 \
