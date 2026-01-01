@@ -1,4 +1,7 @@
 activations/
 formatted_datasets/
 open-instruct/models/
+open-instruct/output/
 *.log
+open-instruct/scripts/local_dataset_cache/
+*.arrow

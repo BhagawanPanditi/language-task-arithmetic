@@ -7,7 +7,7 @@
 #SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=0
-#SBATCH --time=8:00:00
+#SBATCH --time=12:00:00
 #SBATCH --output=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/train_debug_%j.log
 #SBATCH --error=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/train_debug_%j.log
 export PYTHONPATH=/home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct:$PYTHONPATH

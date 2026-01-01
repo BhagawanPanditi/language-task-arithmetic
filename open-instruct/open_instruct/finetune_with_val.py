@@ -1,4 +1,4 @@
-# !/usr/bin/env python
+g !/usr/bin/env python
 # coding=utf-8
 # Copyright 2024 AllenAI. All rights reserved.
 #
