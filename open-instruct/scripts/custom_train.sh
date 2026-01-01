@@ -21,11 +21,11 @@ accelerate launch \
     --warmup_ratio 0.03 \
     --weight_decay 0.0 \
     --num_train_epochs 3 \
-    --output_dir /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/output/llama-sft-xlsum-language-compliment/ \
+    --output_dir /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/output/llama-sft-math-language-compliment/ \
     --with_tracking \
     --report_to tensorboard \
     --logging_steps 1 \
     --reduce_loss sum \
     --model_revision main \
-    --exp_name llama-sft-xlsum-language-compliment \
+    --exp_name llama-sft-math-language-compliment \
     --seed 123

@@ -1,4 +1,4 @@
-g !/usr/bin/env python
+#!/usr/bin/env python
 # coding=utf-8
 # Copyright 2024 AllenAI. All rights reserved.
 #
@@ -125,7 +125,7 @@ class FlatArguments:
         metadata={"help": "A dictionary of datasets (local or HF) to sample from."},
     )
     # dataset_mixer_list: List[str] = field(default_factory=lambda: ["/workspace/ibm-vaibhav/formatted_datasets/tulu-math-persona/final_train.jsonl", "1.0", "/workspace/ibm-vaibhav/formatted_datasets/xlsum/final_train.jsonl", "1.0", "/workspace/ibm-vaibhav/formatted_datasets/xnli/final_train.jsonl", "1.0"])
-    dataset_mixer_list: List[str] = field(default_factory=lambda: ["/home/compiling-ganesh/24m0829/language-task-arithmetic/formatted_datasets/xlsum/final_train.jsonl", "1.0"])
+    dataset_mixer_list: List[str] = field(default_factory=lambda: ["/home/compiling-ganesh/24m0829/language-task-arithmetic/formatted_datasets/tulu-math-persona/final_train.jsonl", "1.0"])
     """A list of datasets (local or HF) to sample from."""
     dataset_mixer_list_splits: List[str] = field(default_factory=lambda: ["train"])
     """The dataset splits to use for training"""
@@ -174,7 +174,7 @@ class FlatArguments:
     #     },
     # )
     val_dataset_mixer_list: Optional[List[str]] = field(
-        default_factory=lambda: ["/home/compiling-ganesh/24m0829/language-task-arithmetic/formatted_datasets/xlsum/final_validation.jsonl", "1.0"],
+        default_factory=lambda: ["/home/compiling-ganesh/24m0829/language-task-arithmetic/formatted_datasets/tulu-math-persona/final_validation.jsonl", "1.0"],
         metadata={
             "help": (
                 "A list of validation dataset identifiers (HF id or local path). "
