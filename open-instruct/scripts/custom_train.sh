@@ -12,8 +12,8 @@ accelerate launch \
     --tokenizer_name_or_path /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/models/llama-3.2-3b-instruct \
     --use_slow_tokenizer \
     --max_seq_length 4096 \
-    --per_device_train_batch_size 4 \
-    --gradient_accumulation_steps 16 \
+    --per_device_train_batch_size 1 \
+    --gradient_accumulation_steps 64 \
     --learning_rate 5e-06 \
     --lr_scheduler_type linear \
     --checkpointing_steps 100 \
