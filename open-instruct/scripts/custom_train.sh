@@ -1,9 +1,9 @@
-export CUDA_VISIBLE_DEVICES=0,1
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 export TMPDIR=/home/compiling-ganesh/24m0829/language-task-arithmetic/tmp
 
 accelerate launch \
     --mixed_precision bf16 \
-    --num_processes 2 \
+    --num_processes 4 \
     --use_deepspeed \
     --deepspeed_config_file /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/configs/ds_configs/stage3_no_offloading_accelerate.conf \
     --deepspeed_multinode_launcher standard \
@@ -12,8 +12,8 @@ accelerate launch \
     --tokenizer_name_or_path /home/compiling-ganesh/24m0829/language-task-arithmetic/open-instruct/models/llama-3.2-3b-instruct \
     --use_slow_tokenizer \
     --max_seq_length 4096 \
-    --per_device_train_batch_size 1 \
-    --gradient_accumulation_steps 64 \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 16 \
     --learning_rate 5e-06 \
     --lr_scheduler_type linear \
     --checkpointing_steps 100 \
